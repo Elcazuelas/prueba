@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Editar Empresa | CENS</title>
+	<link rel="icon" href="img/LogoCENS.png">
+	<link rel="stylesheet" href="/css/listar.css">
+	<!-- Incluye Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+	<!--BARRA DE NAVEGACION-->
+	<div class="contenedor">
+		<div class="navegadorL">
+			<ul>
+				<li>
+					<div class="logo">
+						<a th:href="@{/}">
+							<img src="/img/LogoCENS.png" alt="Logo Cens" height="100">
+						</a>
+					</div>
+				</li>
+				<li>
+					<a th:href="@{/}">
+						<span class="icono">
+							<ion-icon name="home-outline"></ion-icon>
+						</span>
+						<span class="titulo"> Inicio</span>
+					</a>
+				</li>
+				<li>
+					<a th:href="@{/admin}">
+						<span class="icono">
+							<ion-icon name="people-outline"></ion-icon>
+						</span>
+						<span class="titulo">Administrar Usuarios</span>
+					</a>
+				</li>
+				<li>
+					<a th:href="@{/administrarEmpresas}">
+						<span class="icono">
+							<ion-icon name="business-outline"></ion-icon>
+						</span>
+						<span class="titulo"> Administrar Empresas</span>
+					</a>
+				</li>
+				<li>
+					<a th:href="@{/misdatos}">
+						<span class="icono">
+							<ion-icon name="person-outline"></ion-icon>
+						</span>
+						<span class="titulo"> Mis Datos</span>
+					</a>
+				</li>
+				<li>
+					<a th:href="@{/logout}">
+						<span class="icono">
+							<ion-icon name="log-out-outline"></ion-icon>
+						</span>
+						<span class="titulo"> Cerrar Sesión</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!--	--------------->
+
+	<div class="cuerpo">
+		<div class="encabezado">
+			<div class="toggleicon">
+				<ion-icon name="menu-outline"></ion-icon>
+			</div>
+		</div>
+	</div>
+	<div class="container emp-profile">
+		<h2>Editar Empresa</h2>
+		<div class="container mt-4">
+			<form th:action="@{/editarEmpresa}" method="post" th:object="${empresaDTO}">
+				<input type="hidden" th:field="${empresaEditar.id}" id="id" name="id" />
+				<input type="hidden" th:field="${empresaEditar.rut_empresa}" id="rut_empresa" name="rut_empresa" />
+				<input type="hidden" th:field="${empresaEditar.razon_social}" id="razon_social" name="razon_social" />
+				<div class="mb-3">
+					<label for="nombre_empresa" class="form-label">Nombre empresa:</label>
+					<input type="text" class="form-control" id="nombre_empresa" name="nombre_empresa"
+						th:value="${empresaEditar.nombre_empresa}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="correo_empresa" class="form-label">Correo electrónico empresa:</label>
+					<input type="email" class="form-control" id="correo_empresa" name="correo_empresa"
+						th:value="${empresaEditar.correo_empresa}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="telefono_empresa" class="form-label">Teléfono empresa:</label>
+					<input type="text" class="form-control" id="telefono_empresa" name="telefono_empresa"
+						th:value="${empresaEditar.telefono_empresa}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="nombre_representante" class="form-label">Nombre representante:</label>
+					<input type="text" class="form-control" id="nombre_representante" name="nombre_representante"
+						th:value="${empresaEditar.nombre_representante}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="apellido_representante" class="form-label">Apellido representante:</label>
+					<input type="text" class="form-control" id="apellido_representante" name="apellido_representante"
+						th:value="${empresaEditar.apellido_representante}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="correo_representante" class="form-label">Correo electrónico
+						representante:</label>
+					<input type="email" class="form-control" id="correo_representante" name="correo_representante"
+						th:value="${empresaEditar.correo_representante}" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="telefono_representante" class="form-label">Teléfono representante:</label>
+					<input type="tel" class="form-control" id="telefono_representante" name="telefono_representante"
+						th:value="${empresaEditar.telefono_representante}" required>
+				</div>
+				<!-- Botón de Enviar -->
+				<button type="submit" class="btn btn-primary">Guardar Cambios</button>
+
+			</form>
+		</div>
+	</div>
+</body>
+<!-- Incluye Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="/javascript/lateralBar.js"></script>
+
+</html>

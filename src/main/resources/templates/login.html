@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login | CENS</title>
+    <link rel="icon" href="img/LogoCENS.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.login-info-box').fadeOut();
+            $('.login-show').addClass('show-log-panel');
+        });
+
+        $('.login-reg-panel input[type="radio"]').on('change', function () {
+            if ($('#log-login-show').is(':checked')) {
+                $('.register-info-box').fadeOut();
+                $('.login-info-box').fadeIn();
+                $('.white-panel').addClass('right-log');
+                $('.register-show').addClass('show-log-panel');
+                $('.login-show').removeClass('show-log-panel');
+            } else if ($('#log-reg-show').is(':checked')) {
+                $('.register-info-box').fadeIn();
+                $('.login-info-box').fadeOut();
+                $('.white-panel').removeClass('right-log');
+                $('.login-show').addClass('show-log-panel');
+                $('.register-show').removeClass('show-log-panel');
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <!--	--------------->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </header>
+    <div class="login-reg-panel">
+        <div class="logo-lateral">
+            <img src="https://sello.cens.cl/static/imgs/CENS_logo.png" class="img" alt="LOGO SENS">
+        </div>
+        <div class="white-panel">
+            <div class="login-show show-log-panel">
+                <h2>Inicio de sesión</h2>
+                <form th:action="@{/login}" method="post">
+                    <div th:if=${param.error}>
+                        <p style="color: red">Credenciales invalidas</p>
+                    </div>
+                    <div th:if=${param.logout}>
+                        <p style="color: rgb(0, 115, 255)">Ha cerrado sesión exitosamente</p>
+                    </div>
+                    <div class="form-group">
+                        <input id="run" name="username" type="text" class="form-control" required autofocus="autofocus"
+                            placeholder="RUN">
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" name="password" class="form-control" required
+                            autofocus="autofocus" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="submit" class="form-control btn btn-primary" name="login-submit"
+                                    id="login-submit" value="Iniciar sesión" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a th:href="@{/resetPassword}">Olvidé mi contrasasjdioujaslikd aeña</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

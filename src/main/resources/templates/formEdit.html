@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Registro</title>
+
+        <!-- Incluye Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <div class="container mt-5">
+            <h2>Formulario de Registro</h2>
+            <form action="/procesarRegistro" method="post">
+
+                <!-- Campo RUN -->
+                <div class="mb-3">
+                    <label for="run" class="form-label">RUN:</label>
+                    <input type="text" class="form-control" id="run" name="run" required>
+                </div>
+
+                <!-- Campo Nombre -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+
+                <!-- Campo Apellido Paterno -->
+                <div class="mb-3">
+                    <label for="apellidoPaterno" class="form-label">Apellido Paterno:</label>
+                    <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" required>
+                </div>
+
+                <!-- Campo Apellido Materno -->
+                <div class="mb-3">
+                    <label for="apellidoMaterno" class="form-label">Apellido Materno:</label>
+                    <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" required>
+                </div>
+
+                <!-- Campo Correo Electrónico -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <!-- Campo Número de Teléfono -->
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Número de Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+
+                <!-- Botón de Enviar -->
+                <button type="submit" class="btn btn-primary">Enviar</button>
+
+            </form>
+        </div>
+
+        <!-- Incluye Bootstrap JS y Popper.js (necesarios para algunas funcionalidades de Bootstrap) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

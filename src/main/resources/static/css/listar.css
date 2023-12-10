@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+}
+
+body {
+  background: url(https://img.freepik.com/foto-gratis/fondo-abstracto-textura_1258-30478.jpg);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  min-height: 100pv;
+  overflow-x: hidden;
+}
+
+
+
+.btn-primary {
+  width: 150px;
+  height: 36px;
+}
+
+/*div.dataTables_wrapper {
+  position: relative;
+  height: 400px;
+}*/
+
+
+.container.emp-profile {
+  overflow-y: auto;
+  max-height: auto;
+  top: 75px;
+  left: 50px;
+  width: 315%;
+  overflow-x: hidden;
+  transition: 0.5s;
+  height: 800px;
+  background: #fff;
+  padding: 3%;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.profile-head h5 {
+  color: #333;
+}
+
+.profile-head h6 {
+  color: #0062cc;
+}
+
+.profile-edit-btn {
+  border: none;
+  border-radius: 1.5rem;
+  width: 70%;
+  padding: 2%;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.profile-head .nav-tabs {
+  margin-bottom: 5%;
+}
+
+.profile-head .nav-tabs .nav-link {
+  font-weight: 600;
+  border: none;
+}
+
+.profile-head .nav-tabs .nav-link.active {
+  border: none;
+  border-bottom: 2px solid #0062cc;
+}
+
+.profile-work {
+  padding: 14%;
+  margin-top: -15%;
+}
+
+.profile-work p {
+  font-size: 12px;
+  color: #818182;
+  font-weight: 600;
+  margin-top: 10%;
+}
+
+.profile-work a {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-work ul {
+  list-style: none;
+}
+
+.profile-tab label {
+  font-weight: 600;
+}
+
+.profile-tab p {
+  font-weight: 600;
+  color: #0062cc;
+}
+
+.col-md-2[type="button"] {
+  max-width: 150px;
+  width: 100%;
+  background: #444444;
+  color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  float: right;
+  cursor: pointer;
+}
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+
+}
+
+/*NAVEGADOR LATERAL*/
+
+.navegadorL {
+  position: fixed;
+  width: 95px;
+  height: 100%;
+  background: var(--white);
+  border-left: 0px solid var(--white);
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.navegadorL.active {
+  width: 300px;
+}
+
+.navegadorL ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navegadorL ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navegadorL ul li:hover,
+.navegadorL ul li.hovered {
+  background-color: var(--blue);
+}
+
+.navegadorL ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navegadorL ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.navegadorL ul li:hover a,
+.navegadorL ul li.hovered a {
+  color: var(--white);
+}
+
+.navegadorL ul li a .icono {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navegadorL ul li a .icono ion-icon {
+  font-size: 1.75rem;
+}
+
+.navegadorL ul li a .titulo {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  left: 10px;
+}
+
+/* CUERPO */
+
+.cuerpo {
+  position: absolute;
+  width: calc(100%-90px);
+  left: 90px;
+  min-height: 100vh;
+  transition: 0.5s;
+
+}
+
+.cuerpo.active {
+  width: calc(100%-300px);
+  left: 300px;
+  max-width: 500px;
+}
+
+.encabezado {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggleicon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.cuerpo.active .container.emp-profile {
+  width: 264%;
+  /* Ajusta el porcentaje según tus necesidades */
+  transition: 0.5s;
+}
+
+.toggleicon ion-icon {
+  color: white;
+}
