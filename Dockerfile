@@ -4,7 +4,7 @@ FROM openjdk:21
 WORKDIR /app
 
 # Copia el JAR construido de tu proyecto en el contenedor
-COPY target/ProyectoCENS-1.0.jar app.jar
+COPY target/*.jar app.jar
 
 # Expone el puerto en el que tu aplicación Spring Boot está ejecutando
 EXPOSE 8080
